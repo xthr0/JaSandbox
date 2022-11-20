@@ -14,6 +14,7 @@ public class Main {
     public static String URL;
     public static final ObjectMapper mapper = new ObjectMapper();
     public static void main(String[] args) throws IOException {
+//      Просто так
         System.out.println("Enter your API key URL from \"https://api.nasa.gov/\":");
         Scanner console = new Scanner(System.in);
         URL = console.nextLine();
