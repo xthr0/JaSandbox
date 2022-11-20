@@ -8,12 +8,16 @@ import org.apache.http.impl.client.HttpClientBuilder;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Main {
-    //Enter your own API key from "https://api.nasa.gov/"
-    public static final String URL = "https://api.nasa.gov/planetary/apod?api_key=";
+    public static String URL;
     public static final ObjectMapper mapper = new ObjectMapper();
     public static void main(String[] args) throws IOException {
+        System.out.println("Enter your API key URL from \"https://api.nasa.gov/\":");
+        Scanner console = new Scanner(System.in);
+        URL = console.nextLine();
+        console.close();
         CloseableHttpClient httpClient = HttpClientBuilder.create()
                 .setDefaultRequestConfig(RequestConfig.custom()
                         .setConnectTimeout(5000)    // максимальное время ожидание подключения к серверу
