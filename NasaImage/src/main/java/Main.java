@@ -10,8 +10,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class Main {
-    public static final String URL = "https://api.nasa.gov/planetary/apod?api_key=";
     //Enter your own API key from "https://api.nasa.gov/"
+    public static final String URL = "https://api.nasa.gov/planetary/apod?api_key=";
     public static final ObjectMapper mapper = new ObjectMapper();
     public static void main(String[] args) throws IOException {
         CloseableHttpClient httpClient = HttpClientBuilder.create()
