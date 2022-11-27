@@ -11,7 +11,7 @@ public class telegramBot extends TelegramLongPollingBot {
     // Telegram bot token & name
     public static final String BOT_TOKEN = "";
     public static final String BOT_USERNAME = "";
-    public static final String CHAT_ID = "";
+    public static long CHAT_ID;
     // Nasa api url
     public static final String URL_API = "";
 
@@ -33,6 +33,7 @@ public class telegramBot extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
         if (update.hasMessage()) {
+            CHAT_ID = update.getMessage().getChatId();
             switch (update.getMessage().getText()) {
                 case "/help":
                     sendMessage("""
